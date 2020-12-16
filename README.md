@@ -8,7 +8,9 @@ It is possible to directly compare the best models for text summarization Bart a
 pip install -U transformers
 pip install -U torch
 pip install flask
+pip install sentencepiece
 ```
+**ver of Transformers = 4.0.0**
 
 ## Run
 ```

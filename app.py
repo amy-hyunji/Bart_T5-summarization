@@ -6,14 +6,14 @@ import json
 from transformers import BartTokenizer, BartForConditionalGeneration, BartConfig
 from transformers import T5Tokenizer, T5ForConditionalGeneration, T5Config
 
-BART_PATH = 'bart-large'
+BART_PATH = 'facebook/bart-large'
 T5_PATH = 't5-base'
 # BART_PATH = 'model/bart'
 # T5_PATH = 'model/t5'
 
 app = Flask(__name__)
-bart_model = BartForConditionalGeneration.from_pretrained(BART_PATH, output_past=True)
-bart_tokenizer = BartTokenizer.from_pretrained(BART_PATH, output_past=True)
+bart_model = BartForConditionalGeneration.from_pretrained(BART_PATH, force_bos_token_to_be_generated=True)
+bart_tokenizer = BartTokenizer.from_pretrained(BART_PATH)
 
 
 t5_model = T5ForConditionalGeneration.from_pretrained(T5_PATH)
